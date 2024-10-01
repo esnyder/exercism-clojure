@@ -18,3 +18,8 @@
   (let [denominator (apply + (map #(Math/pow % 2) [c d]))]
     [(/ (+ (* a c) (* b d)) denominator)
      (/ (- (* b c) (* a d)) denominator)]))
+
+(defn exp [e [a b]]
+  (let [e-to-a (Math/exp e a)]
+    [(* e-to-a (Math/cos b))
+     (* e-to-a (Math/sin b))]))

@@ -31,3 +31,7 @@
 (defn div [[a b] [c d]] ;; <- arglist goes here
   ;; your code goes here
 )
+
+(defn exp [e [a b]] ;; <- arglist goes here
+  ;; your code goes here
+)

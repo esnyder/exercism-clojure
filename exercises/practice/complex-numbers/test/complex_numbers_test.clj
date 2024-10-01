@@ -192,3 +192,20 @@
   (testing "Divide real number by complex number"
     (is (float-equal? [2.5 -2.5]
                       (c/div [5 0] [1 1])))))
+
+;; Tests for exponentiation
+
+(deftest real-to-real-only-complex-exponent
+  (testing "Raise a real number to a complex exponent with only a real component"
+    (is (float-equal? [25.0 0.0]
+                      (c/exp 5.0 [2.0 0.0])))))
+
+(deftest real-to-imaginary-only-complex-exponent
+  (testing "Raise a real number to a complex exponent with only an imaginary component"
+    (is (float-equal? [0.0 0.0]
+                      (c/exp 5.0 [0.0 2.0])))))
+
+(deftest real-to-imaginary
+  (testing "Raise real number to complex exponent"
+    (is (float-equal? [4.0 4.0]
+                      (e/exp 2.0 [2.0 (/ Math/PI 2)])))))
